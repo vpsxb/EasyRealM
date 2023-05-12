@@ -244,7 +244,7 @@ echo -e "
  ${Green_font_prefix}3.${Font_color_suffix} 启动 RealM
  ${Green_font_prefix}4.${Font_color_suffix} 停止 RealM
  ${Green_font_prefix}5.${Font_color_suffix} 重启 RealM"
-——————————————
+——————————————"
 check_status
 
 read -p " 请输入数字后[0-11] 按回车键:
