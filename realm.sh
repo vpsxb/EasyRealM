@@ -51,12 +51,12 @@ Install_RealM(){
   if [[ ${version} == [2] ]]; then  
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://ghproxy.com/https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-musl.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
   chmod +x /etc/realm/realm
   else
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://ghproxy.com/https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-gnu.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
   chmod +x /etc/realm/realm
   fi  
   else
@@ -69,12 +69,12 @@ Install_RealM(){
   if [[ ${version} == [2] ]]; then  
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-musl.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
   chmod +x /etc/realm/realm
   else
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-gnu.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
   chmod +x /etc/realm/realm
   fi
   fi
@@ -198,12 +198,12 @@ Update_RealM(){
   if [[ ${version} == [2] ]]; then  
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://ghproxy.com/https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-musl.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
   chmod +x /etc/realm/realm
   else
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://ghproxy.com/https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-gnu.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
   chmod +x /etc/realm/realm
   fi  
   else
@@ -216,12 +216,12 @@ Update_RealM(){
   if [[ ${version} == [2] ]]; then  
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-musl.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz
   chmod +x /etc/realm/realm
   else
   mkdir -p /etc/realm
   wget -N --no-check-certificate https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-gnu.tar.gz -O /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
-  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
+  tar -zxvf /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz -C /etc/realm && rm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz
   chmod +x /etc/realm/realm
   fi
   fi
