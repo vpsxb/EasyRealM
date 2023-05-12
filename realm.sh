@@ -77,6 +77,7 @@ Install_RealM(){
   tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm realm-x86_64-unknown-linux-gnu.tar.gz
   chmod +x realm
   fi
+  fi
 wget -N --no-check-certificate https://raw.githubusercontent.com/vpsxb/EasyRealM/main/config.toml -O /etc/realm/config.toml && chmod +x /etc/realm/config.toml
 echo '
 [Unit]
