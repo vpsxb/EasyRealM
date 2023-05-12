@@ -224,6 +224,7 @@ Update_RealM(){
   tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm realm-x86_64-unknown-linux-gnu.tar.gz
   chmod +x realm
   fi
+  fi
 }
 
 #主菜单
