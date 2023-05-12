@@ -232,7 +232,7 @@ start_menu(){
 clear
 echo
 echo "#############################################################"
-echo "#                 RealM 安装脚本  By vpsxb              #"
+echo "#                 RealM 安装脚本  By vpsxb                  #"
 echo "#############################################################"
 #echo -e "公告：$(curl -L -s --connect-timeout 3 https://ghproxy.com/https://raw.githubusercontent.com/seal0207/EasyRealM/main/notice)"
 echo -e "
@@ -243,7 +243,7 @@ echo -e "
 ——————————————
  ${Green_font_prefix}3.${Font_color_suffix} 启动 RealM
  ${Green_font_prefix}4.${Font_color_suffix} 停止 RealM
- ${Green_font_prefix}5.${Font_color_suffix} 重启 RealM"
+ ${Green_font_prefix}5.${Font_color_suffix} 重启 RealM
 —————————————— "
 check_status
 
