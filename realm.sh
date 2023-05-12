@@ -3,13 +3,12 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 clear
 
-sh_ver="1.0.7"
+sh_ver="1.0.0"
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[信息]${Font_color_suffix}"
 Error="${Red_font_prefix}[错误]${Font_color_suffix}"
 Tip="${Green_font_prefix}[注意]${Font_color_suffix}"
 realm_conf_path="/etc/realm/config.toml"
-raw_conf_path="/etc/realm/rawconf"
 #检测是否安装RealM
 check_status(){
     if test -a /etc/realm/realm -a /etc/systemd/system/realm.service -a /etc/realm/config.toml;then
@@ -79,14 +78,7 @@ Install_RealM(){
   chmod +x realm
   fi
   
-#echo '
-#{
-#    "listening_addresses": ["0.0.0.0"],
-#    "listening_ports": [""],
-#    "remote_addresses": [""],
-#    "remote_ports": [""]
-#} ' > /etc/realm/config.toml
-#chmod +x /etc/realm/config.toml
+
 wget -N --no-check-certificate https://raw.githubusercontent.com/vpsxb/EasyRealM/main/config.toml -O /etc/realm/config.toml && chmod +x /etc/realm/config.toml
 echo '
 [Unit]
@@ -240,7 +232,7 @@ start_menu(){
 clear
 echo
 echo "#############################################################"
-echo "#                 RealM 一键脚本  By vpsxb              #"
+echo "#                 RealM 安装脚本  By vpsxb              #"
 echo "#############################################################"
 #echo -e "公告：$(curl -L -s --connect-timeout 3 https://ghproxy.com/https://raw.githubusercontent.com/seal0207/EasyRealM/main/notice)"
 echo -e "
