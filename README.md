@@ -3,7 +3,7 @@
 ![image](https://mxpic.ml/2022/07/14/20220714_c521a336bf1af.png)
 ## 使用方法
 一键脚本：<br>
-`wget -N --no-check-certificate realm.sh https://raw.githubusercontent.com/vpsxb/EasyRealM/main/realm.sh && chmod +x realm.sh && ./realm.sh`
+`wget -N --no-check-certificate -O realm.sh https://raw.githubusercontent.com/vpsxb/EasyRealM/main/realm.sh && chmod +x realm.sh && ./realm.sh`
 
 ### RealM作者：
 https://zhb.me/realm 
