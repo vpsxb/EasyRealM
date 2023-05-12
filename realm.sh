@@ -32,49 +32,62 @@ Install_RealM(){
   sleep 2s
   start_menu
   fi
+  last_version=$(curl -Ls "https://api.github.com/repos/zhboner/realm/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  if [[ ! -n "$last_version" ]]; then
+    echo -e "${red}检测 realm 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 realm 版本安装${plain}"
+    exit 1
+  fi
   echo -e "#############################################################"
-  echo -e "#    请选择下载点:  1.国外   2.国内                         #"
+  echo -e "#    请选择下载点:  1.国外   2.国内                           #"
   echo -e "#############################################################"
   read -p "请选择(默认国外): " download
   [[ -z ${download} ]] && download="1"
   if [[ ${download} == [2] ]]; then
   echo -e "#############################################################"
-  echo -e "#                     请选择下载版本:                       #"  
-  echo -e "#    1.（1.2.2为修复断流版）   2.（1.5大佬Soniccube修改版）    #"
+  echo -e "#                     请选择下载版本:                        #"  
+  echo -e "#    1.（realm_latest_gnu）   2.（realm_latest_musl）        #"
   echo -e "#############################################################"
-  read -p "请选择(默认为1.2.1修复断流版): " version
+  read -p "请选择(默认为gnu版): " version
   [[ -z ${version} ]] && version="1"
   if [[ ${version} == [2] ]]; then  
-  mkdir /etc/realm
-  wget -N --no-check-certificate https://recordaily.com/soft/realm1.5 && chmod +x realm1.5 && mv realm1.5 /etc/realm/realm
+  mkdir -p /etc/realm
+  wget -N --no-check-certificate https://ghproxy.com/https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-musl.tar.gz
+  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz && rm realm-x86_64-unknown-linux-musl.tar.gz
+  chmod +x realm && mv realm /etc/realm/realm
   else
-  mkdir /etc/realm
-  wget -N --no-check-certificate https://recordaily.com/soft/realm1.2.2 && chmod +x realm1.2.2 && mv realm1.2.2 /etc/realm/realm
+  mkdir -p /etc/realm
+  wget -N --no-check-certificate https://ghproxy.com/https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-gnu.tar.gz
+  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm realm-x86_64-unknown-linux-gnu.tar.gz
+  chmod +x realm && mv realm /etc/realm/realm
   fi  
   else
   echo -e "#############################################################"
   echo -e "#                     请选择下载版本:                       #"  
-  echo -e "#    1.（1.2.2为修复断流版）   2.（1.5大佬Soniccube修改版）    #"
+  echo -e "#    1.（realm_latest_gnu）   2.（realm_latest_musl）    #"
   echo -e "#############################################################"
-  read -p "请选择(默认为1.2.2修复断流版): " version
+  read -p "请选择(默认为gnu版): " version
   [[ -z ${version} ]] && version="1"
   if [[ ${version} == [2] ]]; then  
-  mkdir /etc/realm
-  wget -N --no-check-certificate https://github.com/seal0207/EasyRealM/raw/main/realm1.2.0 && chmod +x realm1.2.0 && mv realm1.2.0 /etc/realm/realm
+  mkdir -p /etc/realm
+  wget -N --no-check-certificate https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-musl.tar.gz
+  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-musl.tar.gz && rm realm-x86_64-unknown-linux-musl.tar.gz
+  chmod +x realm && mv realm /etc/realm/realm
   else
-  mkdir /etc/realm
-  wget -N --no-check-certificate https://raw.githubusercontent.com/seal0207/EasyRealM/main/realm && chmod +x realm && mv realm /etc/realm/realm  
-  fi
+  mkdir -p /etc/realm
+  wget -N --no-check-certificate https://github.com/zhboner/realm/releases/download/${last_version}/realm-x86_64-unknown-linux-gnu.tar.gz
+  tar -zxvf -C /etc/realm /etc/realm/realm-x86_64-unknown-linux-gnu.tar.gz && rm realm-x86_64-unknown-linux-gnu.tar.gz
+  chmod +x realm && mv realm /etc/realm/realm
   fi
   
-echo '
-{
-    "listening_addresses": ["0.0.0.0"],
-    "listening_ports": [""],
-    "remote_addresses": [""],
-    "remote_ports": [""]
-} ' > /etc/realm/config.json
-chmod +x /etc/realm/config.json
+#echo '
+#{
+#    "listening_addresses": ["0.0.0.0"],
+#    "listening_ports": [""],
+#    "remote_addresses": [""],
+#    "remote_ports": [""]
+#} ' > /etc/realm/config.json
+#chmod +x /etc/realm/config.json
+
 echo '
 [Unit]
 Description=realm
