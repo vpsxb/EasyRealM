@@ -7,11 +7,11 @@ no_tcp = false
 use_udp = true
 
 [[endpoints]]
-listen = "127.0.0.1:10000"
-remote = "127.0.0.1:20000"
+listen = "[::0]:10000"
+remote = "1.1.1.1:443"
 remote_transport = "tls;sni=example.com;insecure"
 
 [[endpoints]]
-listen = "127.0.0.1:20000"
-remote = "127.0.0.1:30000"
+listen = "[::0]:20000"
+remote = "www.google.com:443"
 listen_transport = "tls;servername=example.com"
