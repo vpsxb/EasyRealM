@@ -1,6 +1,6 @@
 # EasyRealM 安装脚本
 仅安装，回归RealM极简本质，并未配置转发(主要是不会写)<br>
-![image](https://mxpic.ml/2022/07/14/20220714_c521a336bf1af.png)
+![image](https://tc.vpsxb.cc/images/2023/05/13/202305131406359.png)
 ## 使用方法
 一键脚本：<br>
 `wget -N --no-check-certificate -O realm.sh https://raw.githubusercontent.com/vpsxb/EasyRealM/main/realm.sh && chmod +x realm.sh && ./realm.sh`
