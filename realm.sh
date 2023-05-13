@@ -32,6 +32,7 @@ Install_RealM(){
   start_menu
   fi
   last_version=$(curl -Ls "https://api.github.com/repos/zhboner/realm/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  echo -e "检测到 RealM 最新版本：${last_version}，开始安装"
   if [[ ! -n "$last_version" ]]; then
     echo -e "${red}检测 realm 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 realm 版本安装${plain}"
     exit 1
@@ -179,8 +180,9 @@ Restart_RealM(){
 #更新RealM
 Update_RealM(){
   last_version=$(curl -Ls "https://api.github.com/repos/zhboner/realm/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  echo -e "检测到 RealM 最新版本：${last_version}，开始安装"
   if [[ ! -n "$last_version" ]]; then
-    echo -e "${red}检测 realm 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 realm 版本安装${plain}"
+    echo -e "${red}检测 RealM 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 RealM 版本安装${plain}"
     exit 1
   fi
   echo -e "#############################################################"
