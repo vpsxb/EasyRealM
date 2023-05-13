@@ -1,6 +1,5 @@
 [log]
 level = "warn"
-output = "/var/log/realm.log"
 
 [network]
 no_tcp = false
