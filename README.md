@@ -1,4 +1,4 @@
-# EasyRealM 安装脚本
+# RealM 安装脚本
 仅安装，回归RealM极简本质，并未配置转发(主要是不会写)<br>
 ![image](https://tc.vpsxb.cc/images/2023/05/13/202305131406359.png)
 ## 使用方法
